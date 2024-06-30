@@ -8,13 +8,15 @@ html,body{
   font-family: "Karla", sans-serif;
   background-image: url(./assets/bg.svg);
   background-size: cover;
+  background-repeat: no-repeat;
+  background-position: center center;
   color:#293264;
   height: 100vh;
   padding:0;
   margin: 0;
 }
 
-#root{
+#root:has(header){
   height: 100%;
   display: flex;
   flex-direction: column;
@@ -60,11 +62,18 @@ header{
 /*trivia layout*/
 
 .trivia-container{
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  max-width: 550px;
+  margin:0 auto;
   /* border:1px solid red; */
   padding:2.2em 4.7em;
 }
 
 .trivia{
+  width: 100%;
   /* border: 1px solid green; */
   border-bottom: 1px solid #DBDEF0;
 }
