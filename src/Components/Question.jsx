@@ -44,6 +44,8 @@ export default function Question(props) {
                 classText = 'correct-answer'
             } else if (option === answers.selected_answer) {
                 classText = 'wrong-answer'
+            }else{
+                classText='not-selected-answer'
             }
         } else {
             if (option === answers.selected_answer) {
