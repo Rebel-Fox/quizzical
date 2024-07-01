@@ -20,20 +20,23 @@ export default function Question(props) {
     }, [props.showAnswers])
 
     const optionsArr = [...props.trivia.incorrect_answers]
-    optionsArr.forEach(option => he.decode(option))
+    optionsArr.forEach((option,index) =>{
+        optionsArr[index] = he.decode(option)
+    })
 
     const [randomIndex, setRandomIndex] = React.useState(Math.floor(Math.random() * (optionsArr.length + 1)))
+    
+    optionsArr.splice(randomIndex, 0, he.decode(props.trivia.correct_answer))
 
     console.log(answers)
 
     function handleChange(e) {
         setAnswers(prevAnswers => ({
             ...prevAnswers,
-            selected_answer: he.decode(e.target.value)
+            selected_answer: e.target.value
         }))
     }
 
-    optionsArr.splice(randomIndex, 0, he.decode(props.trivia.correct_answer))
 
 
 
